@@ -11,7 +11,7 @@ namespace MyAssets.Scripts
         [SerializeField] private int _timeToWin;
         
         [SerializeField] private Ball _ball;
-        [SerializeField] private Platform _platform;
+        [SerializeField] private InputRotator _inputRotator;
         [SerializeField] private List<Coin> _coins;
         
         private float _timeLeft;
@@ -39,7 +39,7 @@ namespace MyAssets.Scripts
             _timeLeft -= Time.deltaTime;
             Debug.Log(_timeLeft);
 
-            if (_ball.CollectedCoins >= _scoreToWin)
+            if (_ball.wallet.CollectedCoins >= _scoreToWin)
                 YouWin();
             
             if (_timeLeft <= 0)
@@ -75,7 +75,7 @@ namespace MyAssets.Scripts
         private void ResetState()
         {
             ResetGameParams();
-            ResetPlatform();
+            ResetInputRotator();
             ResetBall();
             ResetCoins();
         }
@@ -86,9 +86,9 @@ namespace MyAssets.Scripts
             _timeLeft = _timeToWin;
         }
 
-        private void ResetPlatform()
+        private void ResetInputRotator()
         {
-            _platform.Reset();
+            _inputRotator.Reset();
         }
 
         private void ResetBall()

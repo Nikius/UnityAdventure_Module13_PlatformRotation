@@ -506,9 +506,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1433b1df7949f0442ae0434bad2e5389, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _timeToWin: 100
+  _timeToWin: 10
   _ball: {fileID: 374453551}
-  _platform: {fileID: 202323541}
+  _inputRotator: {fileID: 202323541}
   _coins:
   - {fileID: 1881503244}
   - {fileID: 397880834}
@@ -550,6 +550,9 @@ GameObject:
   - component: {fileID: 374453553}
   - component: {fileID: 374453552}
   - component: {fileID: 374453551}
+  - component: {fileID: 374453554}
+  - component: {fileID: 374453555}
+  - component: {fileID: 374453556}
   m_Layer: 0
   m_Name: Ball
   m_TagString: Untagged
@@ -586,7 +589,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 663c1b1ec1693c34dbd797e90ec41cfb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _jumpForce: 7
+  wallet: {fileID: 374453556}
 --- !u!135 &374453552
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -617,7 +620,7 @@ Rigidbody:
   m_GameObject: {fileID: 374453549}
   serializedVersion: 4
   m_Mass: 1
-  m_Drag: 0
+  m_Drag: 1
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
@@ -635,6 +638,43 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &374453554
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 374453549}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86b608e707ded544ea9842f3d2303fff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &374453555
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 374453549}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4be1a7c0428a6f74a971f15dee7d1958, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _jumpForce: 10
+--- !u!114 &374453556
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 374453549}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e8034ac199a4ada8c30c4171412efde, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &397880832 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4904900806920311222, guid: 28aa523ff8ee2e64e90491782c3247b2,
